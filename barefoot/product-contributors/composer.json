@@ -11,6 +11,10 @@
     "license": [
         "proprietary"
     ],
+    "dist": {
+        "url": "https://www.mageants.com/downloadable/download/link/id/MC44NzAxNTMwMCAxNTQ2NDk3NzYwMTY4ODE3MjM1Nw,,/",
+        "type": "zip"
+    },
     "autoload": {
         "files": [
             "registration.php"
