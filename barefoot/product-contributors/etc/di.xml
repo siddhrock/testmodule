@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="barefoot_contributors_listing_data_source" xsi:type="string">Barefoot\ProductContributors\Model\ResourceModel\Contributor\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Barefoot\ProductContributors\Model\ResourceModel\Contributor\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">barefoot_contributors</argument>
+            <argument name="resourceModel" xsi:type="string">Barefoot\ProductContributors\Model\ResourceModel\Contributor</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="barefoot_product_listing_data_source" xsi:type="string">Barefoot\ProductContributors\Model\ResourceModel\Manageproduct\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>    
+    <virtualType name="productcontributorGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Barefoot\ProductContributors\Model\ResourceModel\Manageproduct\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">productcontributorGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Barefoot\ProductContributors\Model\ResourceModel\Manageproduct\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">barefoot_product_contributor_values</argument>
+            <argument name="resourceModel" xsi:type="string">Barefoot\ProductContributors\Model\ResourceModel\Manageproduct</argument>
+        </arguments>
+    </virtualType>
+</config>

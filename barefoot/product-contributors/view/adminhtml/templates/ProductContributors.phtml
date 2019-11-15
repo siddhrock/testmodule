@@ -1,0 +1,37 @@
+<?php
+	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$contributorsModel = $objectManager->create('\Barefoot\ProductContributors\Model\Contributor');
+	//echo "<pre>";
+	//print_r(get_class_methods($contributors->getCollection()));
+	$contributorsCollection = $contributorsModel->getCollection();
+	$contributorsData = $contributorsCollection->getData();
+	//exit();
+?>
+
+<!-- <form>
+	contributer <input type="text" name="firstname">
+</form> -->
+<table class="contributer-info">
+	<?php
+	foreach ($contributorsData as $contributor) { ?>
+		<tr>
+			<td>
+				<input type="checkbox" name="contributer" value="<?php echo $contributor['contributor_id'];?>">
+			</td>
+			<td>
+				<?php echo $contributor['first_name']." ".$contributor['last_name'];?></td>
+			<td> 
+				<select>
+				  	<option value="written_by">Written By</option>
+				  	<option value="compiled_by">Compiled By</option>
+				  	<option value="retold_by">Retold By</option>
+				  	<option value="illustrated_by">Illustrated By</option>
+				  	<option value="narrated_by">Narrated By</option>
+				  	<option value="sung_by">Sung By</option>
+				  	<option value="produced_by">Produced By</option>
+				</select> 
+			</td>
+		</tr>
+	<?php }
+	?>	
+</table>

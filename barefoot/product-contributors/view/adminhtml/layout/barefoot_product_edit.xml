@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+     <update handle="editor"/>
+    <body>
+       <referenceContainer name="content">
+            <block class="Barefoot\ProductContributors\Block\Adminhtml\Product\Edit" name="ProductContributors_Product_edit"/>
+            <block class="Magento\Framework\View\Element\Template" name="product" template="Barefoot_ProductContributors::product/product.phtml"></block>
+        </referenceContainer>
+         <referenceContainer name="left">
+            <block class="Barefoot\ProductContributors\Block\Adminhtml\Product\Edit\Tabs" name="ProductContributors_Product_edit_tabs">
+                <block class="Barefoot\ProductContributors\Block\Adminhtml\Product\Edit\Tab\Product" name="ProductContributors_Product_edit_tab_Product"/>
+                 <action method="addTab">
+                    <argument name="name" xsi:type="string">product_section</argument>
+                    <argument name="block" xsi:type="string">ProductContributors_Product_edit_tab_Product</argument>
+                </action>
+                 <!-- This code is added for products grid -->
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">attachment_products</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Select Products</item>
+                        <item name="title" xsi:type="string">Select Products</item>
+                        <item name="url" xsi:type="helper" helper="Barefoot\ProductContributors\Helper\Data::getProductGridUrl"></item>
+                        <item name="class" xsi:type="string">ajax</item>
+                    </argument>
+                </action>
+                <!-- This code is added for products grid -->
+            </block>
+             
+        </referenceContainer>
+    </body>
+</page>

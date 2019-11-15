@@ -1,0 +1,33 @@
+<?php
+ ?>
+<script type="text/javascript">
+	require(['jquery'],function($){
+		var input=$('#product_name').html();
+		$('input[type=radio]').click(function(){
+			var test=$(this).parent();	
+			var pName = $.trim(test.parent().find('.col-name').text());
+			var pid = $.trim(test.parent().find('.col-entity_id').text());
+			var customurl = "<?php /* @noEscape */ echo $block->getUrl('barefoot/index/index'); ?>";
+            $.ajax({
+                url:customurl,
+                data:{
+                    pid:pid
+                },
+                type: 'POST',
+                success: function(result){
+                    $('.field-product_qty .control .control-value').text(result['pqty']);
+                }
+            });
+			$('#product_name').val(pName);
+		});
+		$('.on-mouse').click(function(){
+			alert('hello');
+		});
+		$('input:radio[name="product_id"]').change(function(){
+			   var test=$(this).parent();
+			   var productName = $.trim(test.parent().find('.col-name').text());
+			   $('#product_name').val(productName);
+		});
+	});
+</script>
+				

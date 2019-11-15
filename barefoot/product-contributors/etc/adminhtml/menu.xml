@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Barefoot_ProductContributors::title" title="Barefoot" translate="title" module="Barefoot_ProductContributors" sortOrder="50" resource="Barefoot_ProductContributors::title"/>
+
+	    <add id="Barefoot_ProductContributors::contributors" title="Manage Contributors" module="Barefoot_ProductContributors" sortOrder="50" parent="Barefoot_ProductContributors::title" action="barefoot/contributor/index" resource="Barefoot_ProductContributors::contributors"/> 
+
+	    <add id="Barefoot_ProductContributors::contributors_product" title="Manage Product Contributors" module="Barefoot_ProductContributors" sortOrder="100" parent="Barefoot_ProductContributors::title" action="barefoot/product/index" resource="Barefoot_ProductContributors::contributors_product"/>
+	</menu>
+</config>
+

@@ -1,0 +1,23 @@
+<?php
+ ?>
+<script type="text/javascript">
+	require(['jquery'],function($){
+		$('document').ready(function(){
+		console.log("sdfvsdfsdf");	
+			$('.field-product_name div').css('margin-top','10px');
+			if ($('#product_name').val() == '') {
+				$('#product_name').attr("placeholder", "Select Product");
+				$(".field-product_name div").append('<a style="padding-top:10px;">select product</a>');
+				$('#product_name').click(function(){
+					$('#product_edit_tabs_attachment_products').click();
+				});
+			} else {
+				$(".field-product_name div").append('<a style="padding-top:10px;">Change Product</a>');
+			}
+			$('.field-product_name div a').click(function(){
+				$('#product_edit_tabs_attachment_products').click();
+			});
+		});
+	});
+</script>
+<div id="log"></div>
