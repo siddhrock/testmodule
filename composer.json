@@ -1,7 +1,27 @@
 {
     "name": "barefoot/product-contributors",
-    "description": "Module for Barefoot Product Contributors ",
+    "description": "Module for Barefoot Product  Contributors ",
     "require": {
-        "php": "^5.5 || ^7.0 ||  ^7.1 ||  ^7.2"
-    }
+	"magento/module-backend": ">100.0",
+	"magento/module-store": ">100.0",
+	"magento/framework": ">100.0"
+	},
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Barefoot\\ProductContributors\\": ""
+        }
+    },
+    "minimum-stability": "alpha",
+    "prefer-stable": true
 }
