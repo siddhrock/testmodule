@@ -12,10 +12,6 @@
         "OSL-3.0",
         "AFL-3.0"
     ],
-    "repositories": [
-        {"type": "composer", "url": "https://repo.packagist.com/mageants/"},
-        {"packagist.org": false}
-    ],
     "require": {
     },
     "autoload": {
